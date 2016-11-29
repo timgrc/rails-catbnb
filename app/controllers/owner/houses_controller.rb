@@ -1,4 +1,4 @@
-def HousesController < ApplicationController
+class Owner::HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :destroy]
 
   def index
