@@ -3,7 +3,6 @@ class CreateCats < ActiveRecord::Migration[5.0]
     create_table :cats do |t|
       t.string :name
       t.boolean :male
-      t.string :mail
       t.string :phone_number
       t.date :birthday
       t.string :profile_picture
