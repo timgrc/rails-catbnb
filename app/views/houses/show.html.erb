@@ -1,26 +1,15 @@
-<p>
-  <strong>Name:</strong>
-  <%= @house.name %>
-</p>
+<h1><%= @house.name %></h1>
 
-<p>
-  <strong>Address:</strong>
-  <%= @house.address %>
-</p>
-
-<p>
-  <strong>Kind:</strong>
-  <%= @house.kind %>
-</p>
-
-<p>
-  <strong>Capacity:</strong>
-  <%= @house.capacity %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @house.price %>
-</p>
+<ul>
+  <%= cl_image_tag( @house.photo,
+width: 400, height: 300, crop: :fill) %>
+  <li><strong>Address:</strong> <%= @house.address %></li>
+  <li><strong>Kind:</strong> <%= @house.kind %></li>
+  <li><strong>Capacity:</strong> <%= @house.capacity %></li>
+  <li><strong>Price:</strong> <%= @house.price %></li>
+  <li><strong>Catnip:</strong> <%= @house.catnip %></li>
+  <li><strong>Photo:</strong> <%= @house.photo %></li>
+  <li><strong>Description:</strong> <%= @house.description %></li>
+</ul>
 
 <%= link_to 'Back', houses_path %>
