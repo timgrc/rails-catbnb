@@ -17,6 +17,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+gem 'cloudinary', '1.1.0'
+gem 'carrierwave'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
@@ -26,6 +29,7 @@ group :development, :test do
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'faker'
 end
 
 
