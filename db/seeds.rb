@@ -5,27 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Creating seed in progress ..."
-Cat.destroy_all
 House.destroy_all
+Cat.destroy_all
 
-felix = Cat.create(
-  name:     'Felix',
-  password: 'felixfelix',
-  email:    'felix@felix.cat'
-)
+puts "Creating seeds..."
 
-5.times do
-  the_house = House.new(
-    name: Faker::Address.city,
-    address: Faker::Address.street_address,
-    kind: ['full_house', 'dormitory', 'cat_tree'].sample,
-    capacity: 3,
-    price: 30
-  )
+garfield = Cat.create(name: 'Garfield', email: 'email@example.com', password: 'password')
+felix = Cat.create(name: 'Felix', email: 'felix@example.com', password: 'password_felix')
 
-  the_house.cat = felix
-  the_house.save!
-end
+le_wagon = House.new(name: 'Le Wagon HQ', address: '16 Villa Gaudelet, Paris', kind: 'full_house', capacity: 1, price: 20)
+maison = House.new(name: 'Maison', address: '20 rue des Lilas, Nantes', kind: 'dormitory', capacity: 5, price: 200)
 
-puts "Seed done."
+le_wagon.cat = garfield
+maison.cat = felix
+
+le_wagon.save!
+maison.save!
+
+puts "Finished!"

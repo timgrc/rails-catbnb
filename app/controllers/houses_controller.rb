@@ -1,12 +1,16 @@
 class HousesController < ApplicationController
-  before_action :set_house, only: [:show]
+  before_action :find_house, only: [:show]
+
+  def index
+    @houses = House.all
+  end
 
   def show
   end
 
   private
 
-  def set_house
+  def find_house
     @house = House.find(params[:id])
   end
 end
