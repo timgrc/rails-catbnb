@@ -1,12 +1,32 @@
 class HousesController < ApplicationController
-  before_action :set_house, only: [:show]
+  before_action :find_house, only: [:show]
+
+  def index
+    @houses = House.all
+  end
 
   def show
   end
 
-  private
+  def new
+    @house = House.new
+  end
 
-  def set_house
+  def create
+    @house = House.new(house_params)
+    if @house.save
+      redirect_to house_path(@house)
+    else
+      render "new"
+    end
+  end
+
+  private
+  def house_params
+    params.require(:house).permit(:name, :address, :kind, :capacity, :price)
+  end
+
+  def find_house
     @house = House.find(params[:id])
   end
 end
