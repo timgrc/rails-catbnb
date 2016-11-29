@@ -2,13 +2,12 @@
 
 <ul>
   <%= cl_image_tag( @house.photo,
-width: 400, height: 300, crop: :fill) %>
+width: 300, height: 300, crop: :scale) %>
   <li><strong>Address:</strong> <%= @house.address %></li>
   <li><strong>Kind:</strong> <%= @house.kind %></li>
   <li><strong>Capacity:</strong> <%= @house.capacity %></li>
   <li><strong>Price:</strong> <%= @house.price %></li>
   <li><strong>Catnip:</strong> <%= @house.catnip %></li>
-  <li><strong>Photo:</strong> <%= @house.photo %></li>
   <li><strong>Description:</strong> <%= @house.description %></li>
 </ul>
 

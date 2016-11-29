@@ -11,8 +11,9 @@ class Owner::HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
+    @house.cat = current_cat
     if @house.save
-      redirect_to house_path
+      redirect_to house_path(@house)
     else
       render 'new'
     end
@@ -44,6 +45,7 @@ class Owner::HousesController < ApplicationController
       :price,
       :catnip,
       :photo,
+      :photo_cache,
       :description
     )
   end
