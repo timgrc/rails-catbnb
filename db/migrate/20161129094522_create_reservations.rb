@@ -5,7 +5,7 @@ class CreateReservations < ActiveRecord::Migration[5.0]
       t.date :departure_date
       t.integer :nb_cats
       t.integer :price
-      t.string :status
+      t.string :status, default: 'pending'
       t.references :cat, foreign_key: true
       t.references :house, foreign_key: true
 

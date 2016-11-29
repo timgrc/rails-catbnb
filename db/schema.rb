@@ -10,9 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161129094522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cats", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "male"
+    t.string   "mail"
+    t.string   "phone_number"
+    t.date     "birthday"
+    t.string   "profile_picture"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "kind"
+    t.integer  "capacity"
+    t.integer  "price"
+    t.boolean  "catnip"
+    t.string   "photo"
+    t.string   "description"
+    t.integer  "cat_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["cat_id"], name: "index_houses_on_cat_id", using: :btree
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date     "arrival_date"
+    t.date     "departure_date"
+    t.integer  "nb_cats"
+    t.integer  "price"
+    t.string   "status",         default: "pending"
+    t.integer  "cat_id"
+    t.integer  "house_id"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.index ["cat_id"], name: "index_reservations_on_cat_id", using: :btree
+    t.index ["house_id"], name: "index_reservations_on_house_id", using: :btree
+  end
+
+  add_foreign_key "houses", "cats"
+  add_foreign_key "reservations", "cats"
+  add_foreign_key "reservations", "houses"
 end
