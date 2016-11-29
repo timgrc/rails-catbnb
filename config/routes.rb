@@ -1,4 +1,33 @@
 Rails.application.routes.draw do
+  devise_for :cats
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :houses, only: [:index, :show] do
+    resources :reservations, only: [:new, :create]
+  end
+
+  resources :cats, only: [:show]
+
+  resources :profile, only: [:edit, :update]
+
+  namespace :owner do
+    resources :houses,       only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :reservations, only: [:index] do
+      member do
+        patch :accept
+        patch :decline
+      end
+    end
+  end
+
+  namespace :traveler do
+    resources :reservations, only: [:index] do
+      member do
+        get :confirmation
+      end
+    end
+  end
+
+  # Static pages
+  get 'about_us', to: "pages#about_us"
 end
