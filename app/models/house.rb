@@ -3,6 +3,8 @@ class House < ApplicationRecord
   has_many :reservations
   has_many :cats, through: :reservations
 
+  mount_uploader :photo, PhotoUploader
+
   validates :name,     presence: true
   validates :address,  presence: true
   validates :kind,     presence: true, inclusion: { in: ['full_house', 'dormitory', 'cat_tree'], allow_nil: false }

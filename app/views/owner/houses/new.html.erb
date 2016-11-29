@@ -1,5 +1,5 @@
 <h1>Owner new house</h1>
-<%= simple_form_for(@house) do |f| %>
+<%= simple_form_for([:owner, @house]) do |f| %>
   <%= f.input :name, placeholder: Faker::Address.city %>
   <%= f.input :address, placeholder: Faker::Address.street_address %>
   <%= f.input :kind %>
@@ -8,5 +8,6 @@
   <%= f.input :catnip %>
   <%= f.input :description %>
   <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit %>
 <% end %>
