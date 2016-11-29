@@ -8,7 +8,7 @@
 
 <div>
   <%= simple_form_for [@house, @reservation] do |f| %>
-    <%= f.input :arrival_date, default = @arrival_date %>
+    <%= f.input :arrival_date %>
     <%= f.input :departure_date %>
     <%= f.input :nb_cats %>
     <%= f.submit "confirm reservation", class: "btn btn-primary" %>
