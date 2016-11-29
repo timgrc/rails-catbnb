@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+milou = Cat.new(
+  name: "Milou",
+  email: "milou@msn.com",
+  password: "aaaaaa"
+  )
+milou.save
+
+maison = House.new(
+  name: "beautiful house",
+  address: "86 rue de Glatigny",
+  kind: "dormitory",
+  capacity: "2",
+  price: 3,
+  cat_id: milou.id
+  )
+
+maison.save
+

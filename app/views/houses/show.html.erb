@@ -1,0 +1,13 @@
+<h1><%= @house.name %></h1>
+
+<ul>
+  <%= cl_image_tag( @house.photo,
+width: 400, height: 300, crop: :fill) %>
+  <li>Address: <%= @house.address %></li>
+  <li>Kind: <%= @house.kind %></li>
+  <li>Capacity: <%= @house.capacity %></li>
+  <li>Price: <%= @house.price %></li>
+  <li>Catnip: <%= @house.catnip %></li>
+  <li>Photo: <%= @house.photo %></li>
+  <li>Description: <%= @house.description %></li>
+</ul>
