@@ -1,5 +1,5 @@
 class Owner::HousesController < ApplicationController
-  before_action :set_house, only: [:show, :edit, :destroy]
+  before_action :find_house, only: [:show, :edit, :update, :destroy]
 
   def index
     @houses = House.all
@@ -24,7 +24,7 @@ class Owner::HousesController < ApplicationController
 
   def update
     if @house.update(house_params)
-      redirect_to house_path
+      redirect_to owner_houses_path(@house)
     else
       render 'edit'
     end
@@ -32,6 +32,7 @@ class Owner::HousesController < ApplicationController
 
   def destroy
     @house.destroy
+    redirect_to owner_houses_path(@house)
   end
 
   private
@@ -50,7 +51,7 @@ class Owner::HousesController < ApplicationController
     )
   end
 
-  def set_house
+  def find_house
     @house = House.find(params[:id])
   end
 end

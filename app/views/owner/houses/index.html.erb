@@ -1,4 +1,4 @@
 <% @houses.each do |house| %>
-  <p><%= house.name %></p>
+  <p><%= link_to house.name, edit_owner_house_path(house) %></p>
 <% end %>
 <%= link_to 'Create new house', new_owner_house_path, class: 'btn btn-primary' %>
