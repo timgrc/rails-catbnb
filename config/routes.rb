@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :cats
   root to: 'pages#home'
 
   resources :houses, only: [:index, :show] do
