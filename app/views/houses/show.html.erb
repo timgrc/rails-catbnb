@@ -1,14 +1,39 @@
-<h1><%= @house.name %></h1>
+<div class="banner-show" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @house.photo %>');"></div>
 
-<ul>
-  <%= cl_image_tag( @house.photo,
-width: 300, height: 300, crop: :scale) %>
-  <li><strong>Address:</strong> <%= @house.address %></li>
-  <li><strong>Kind:</strong> <%= @house.kind %></li>
-  <li><strong>Capacity:</strong> <%= @house.capacity %></li>
-  <li><strong>Price:</strong> <%= @house.price %></li>
-  <li><strong>Catnip:</strong> <%= @house.catnip %></li>
-  <li><strong>Description:</strong> <%= @house.description %></li>
-</ul>
+<div class="container">
+ <div class="row">
+   <div class="presentation-appart">
+      <div class="appart col-xs-8">
+        <h1><%= @house.name.capitalize %></h1>
+        <%= @house.address %>
+      </div>
+      <div class="owner col-xs-4">
+        <%= cl_image_tag @house.cat.profile_picture %>
+        <%= @house.cat.name.capitalize  %>
+        <%= render 'form' %>
+     </div>
+   </div>
+ </div>
 
-<%= link_to 'Back', houses_path %>
+
+
+
+<hr>
+
+   <h4>About this house</h4>
+   <h3>Description</h3>
+   <p><%= @house.description %></p>
+
+
+   <hr>
+
+
+   <h3>House</h3>
+   <strong>Kind:</strong> <%= @house.kind %>
+   <strong>Capacity:</strong> <%= @house.capacity %>
+   <strong>Catnip:</strong> <%= "Yes" if @house.catnip %>
+
+   <strong>Price:</strong> <%= @house.price %>
+
+   <%= link_to 'Back', houses_path %>
+</div>
