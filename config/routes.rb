@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :houses, only: [:index, :show] do
     resources :reservations, only: [:new, :create]
+    post '/reservations/booking', to: 'reservations#booking'
   end
 
   resources :cats, only: [:show]

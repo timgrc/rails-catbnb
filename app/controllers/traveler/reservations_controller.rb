@@ -1,4 +1,4 @@
-class Traveler::ReservationController < ApplicationController
+class Traveler::ReservationsController < ApplicationController
   before_action :find_reservation, only: [:confirmation]
 
   def confirmation
