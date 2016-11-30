@@ -36,6 +36,33 @@ puts "Creating seeds..."
 #     }
 #   },
 
+# garfield = Cat.create(name: 'Garfield', email: 'email@example.com', password: 'password')
+# felix = Cat.create(name: 'Felix', email: 'felix@example.com', password: 'password_felix')
+# toto = Cat.create(name: 'Felix', email: 'felix@example.com', password: 'password_felix')
+
+# le_wagon = House.new(name: 'Le Wagon HQ', address: '16 Villa Gaudelet, Paris', kind: 'full_house', capacity: 1, price: 20)
+# maison = House.new(name: 'Maison', address: '20 rue des Lilas, Nantes', kind: 'dormitory', capacity: 5, price: 200)
+# work = House.new(name: 'Work', address: '20 rue des Lilas, Nantes', kind: 'dormitory', capacity: 5, price: 200)
+
+# le_wagon.cat = garfield
+# maison.cat = felix
+# work.cat = toto
+
+# le_wagon.save!
+# maison.save!
+# work.save!
+
+# res_test = Reservation.new(
+#   arrival_date: Date.new(2016,12,22),
+#   departure_date: Date.new(2016,12,29),
+#   nb_cats: 3, price: 20,
+#   cat: garfield,
+#   house: le_wagon,
+#   )
+
+# res_test.cat = garfield
+# res_test.house = le_wagon
+# res_test.save!
 
 #   {
 #     cat: {
