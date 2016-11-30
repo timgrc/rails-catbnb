@@ -1,8 +1,10 @@
+<div class="banner-show" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @house.photo %>');">
+</div>
+
 <h1><%= @house.name %></h1>
 
 <ul>
-  <%= cl_image_tag( @house.photo,
-width: 300, height: 300, crop: :scale) %>
+
   <li><strong>Address:</strong> <%= @house.address %></li>
   <li><strong>Kind:</strong> <%= @house.kind %></li>
   <li><strong>Capacity:</strong> <%= @house.capacity %></li>
@@ -12,3 +14,8 @@ width: 300, height: 300, crop: :scale) %>
 </ul>
 
 <%= link_to 'Back', houses_path %>
+
+
+
+
+
