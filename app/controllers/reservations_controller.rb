@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     @reservation.house = @house
     @reservation.cat   = current_cat
     if @reservation.save
-      redirect_to confirmation_traveler_reservation_path
+      redirect_to confirmation_traveler_reservation_path(@reservation)
     else
       render 'new'
     end
