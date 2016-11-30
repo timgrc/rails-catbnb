@@ -6,6 +6,7 @@ class HousesController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
   end
 
   private

@@ -14,26 +14,30 @@
     </div>
   </div>
 
-    <hr>
+  <hr>
+  <div>
+    <%= render 'form' %>
+  </div>
+  <hr>
 
-    <h2>About this house</h2>
-    <h3>Description</h3>
-    <p><%= @house.description %></p>
+  <h2>About this house</h2>
+  <h3>Description</h3>
+  <p><%= @house.description %></p>
 
 
-    <hr>
+  <hr>
 
 
-    <h3>House</h3>
-    <ul>
-      <li><i class="fa fa-home" aria-hidden="true"></i><strong>Kind:</strong> <%= @house.kind %></li>
-      <li><i class="fa fa-bed" aria-hidden="true"></i><strong>Capacity:</strong> <%= @house.capacity %></li>
-      <li><i class="fa fa-pagelines" aria-hidden="true"></i><strong>Catnip:</strong> <%= "Yes" if @house.catnip %></li>
-    </ul>
-    <h3>Price</h3>
-    <p><%= @house.price %> / Nuit </p>
+  <h3>House</h3>
+  <ul>
+    <li><i class="fa fa-home" aria-hidden="true"></i><strong>Kind:</strong> <%= @house.kind %></li>
+    <li><i class="fa fa-bed" aria-hidden="true"></i><strong>Capacity:</strong> <%= @house.capacity %></li>
+    <li><i class="fa fa-pagelines" aria-hidden="true"></i><strong>Catnip:</strong> <%= "Yes" if @house.catnip %></li>
+  </ul>
+  <h3>Price</h3>
+  <p><%= @house.price %> / Nuit </p>
 
-    <%= link_to 'Back', houses_path %>
+  <%= link_to 'Back', houses_path %>
 </div>
 
 
