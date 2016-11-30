@@ -1,0 +1,17 @@
+<div class="new-padding">
+  <div class="container">
+    <h2>Thank you for renting a house with us!</h2>
+    <h3>You'll find your reservation details below:</h3>
+      <ul>
+        <li><strong>Arrival date:</strong> <%= @reservation.arrival_date %></li>
+        <li><strong>Departure date:</strong> <%= @reservation.departure_date %></li>
+        <li><strong>Number of cats:</strong> <%= @reservation.nb_cats %></li>
+        <li><strong>Price:</strong> <%= @reservation.price %>€</li>
+        <li><strong>Status:</strong> <%= @reservation.status %></li>
+      </ul>
+
+      <div class="new-padding-two">
+      <%= link_to 'Go back to index', traveler_reservations_path, class: "btn btn-success" %>
+      </div>
+  </div>
+</div>
