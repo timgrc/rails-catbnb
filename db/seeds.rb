@@ -10,55 +10,32 @@ Cat.destroy_all
 
 puts "Creating seeds..."
 
-cats_with_houses = [
-  {
-    cat: {
-      name: 'Garfield',
-      profile_picture: 'https://res.cloudinary.com/dgvrordwa/image/upload/v1480090985/ubx7oxz697ufiiyz3rzl.jpg'
-    },
-    house: {
-      name: 'Garfields house'
-      address: '50 rue de Garfield'
-      photo: 'https://res.cloudinary.com/dgvrordwa/image/upload/v1480090985/ubx7oxz697ufiiyz3rzl.jpg'
-    }
-  },
-  {
-    cat: {
-      name: 'Garfield',
-      profile_picture: 'https://res.cloudinary.com/dgvrordwa/image/upload/v1480090985/ubx7oxz697ufiiyz3rzl.jpg'
-    },
-    house: {
-      name: 'Garfields house'
-      address: '50 rue de Garfield'
-      photo: 'https://res.cloudinary.com/dgvrordwa/image/upload/v1480090985/ubx7oxz697ufiiyz3rzl.jpg'
-    }
-  }
-]
+garfield = Cat.create(name: 'Garfield', email: 'email@example.com', password: 'password')
+felix = Cat.create(name: 'Felix', email: 'felix@example.com', password: 'password_felix')
+toto = Cat.create(name: 'Felix', email: 'felix@example.com', password: 'password_felix')
 
-cats_with_houses.each do |cat|
-  seed_cat = Cat.create(
-    name: cat[:cat][:name],
-    email: "#{cat.name.downcase}@cats.com",
-    profile_picture: cat.[:cat][:profile_picture]
+le_wagon = House.new(name: 'Le Wagon HQ', address: '16 Villa Gaudelet, Paris', kind: 'full_house', capacity: 1, price: 20)
+maison = House.new(name: 'Maison', address: '20 rue des Lilas, Nantes', kind: 'dormitory', capacity: 5, price: 200)
+work = House.new(name: 'Work', address: '20 rue des Lilas, Nantes', kind: 'dormitory', capacity: 5, price: 200)
+
+le_wagon.cat = garfield
+maison.cat = felix
+work.cat = toto
+
+le_wagon.save!
+maison.save!
+work.save!
+
+res_test = Reservation.new(
+  arrival_date: Date.new(2016,12,22),
+  departure_date: Date.new(2016,12,29),
+  nb_cats: 3, price: 20,
+  cat: garfield,
+  house: le_wagon,
   )
-  seed_house = House.new(
-    # objects info
-  )
-  seed_house.cat = seed_cat
-  seed_house.save!
-end
 
-# garfield = Cat.create(name: 'Garfield', email: 'email@example.com', password: 'password')
-# felix = Cat.create(name: 'Felix', email: 'felix@example.com', password: 'password_felix')
-
-
-# le_wagon = House.new(name: 'Le Wagon HQ', address: '16 Villa Gaudelet, Paris', kind: 'full_house', capacity: 1, price: 20)
-# maison = House.new(name: 'Maison', address: '20 rue des Lilas, Nantes', kind: 'dormitory', capacity: 5, price: 200)
-
-# le_wagon.cat = garfield
-# maison.cat = felix
-
-# le_wagon.save!
-# maison.save!
+res_test.cat = garfield
+res_test.house = le_wagon
+res_test.save!
 
 puts "Finished!"
