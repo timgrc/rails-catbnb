@@ -26,4 +26,16 @@ le_wagon.save!
 maison.save!
 work.save!
 
+res_test = Reservation.new(
+  arrival_date: Date.new(2016,12,22),
+  departure_date: Date.new(2016,12,29),
+  nb_cats: 3, price: 20,
+  cat: garfield,
+  house: le_wagon,
+  )
+
+res_test.cat = garfield
+res_test.house = le_wagon
+res_test.save!
+
 puts "Finished!"

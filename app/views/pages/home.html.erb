@@ -3,34 +3,27 @@
     <h1>CATBNB</h1>
     <p>Renting a place as a cat has never been easier.</p>
     <%= simple_form_for @house, html: { class: "form-inline" } do |f| %>
-    <!-- <form action="#" class="form-inline"> -->
-      <div class='input-group date' id='datetimepicker1'>
-        <input type="text" class="form-control input-lg" placeholder="checkin">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </span>
+      <div class='input-group col-xs-3'>
+        <input placeholder="Where?" class="form-control input-lg" type="text">
       </div>
-      <div class='input-group date' id='datetimepicker2'>
-        <input type="text" class="form-control input-lg" placeholder="checkout">
-        <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </span>
+      <div class='input-group col-xs-3'>
+        <input placeholder="Checkin" class="form-control input-lg" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
+      </div>
+      <div class='input-group col-xs-3'>
+          <input placeholder="Checkout" class="form-control input-lg" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
       </div>
       <select name="" id="" class="form-control input-lg">
-        <option value="1">1 person</option>
-        <option value="2">2 persons</option>
-        <option value="3">3 persons</option>
+        <option value="1">1 cat</option>
+        <option value="2">2 cats</option>
+        <option value="3">3 cats</option>
       </select>
       <%= link_to 'Search', houses_path, class: "btn btn-primary btn-lg" %>
-<!--       <%= f.submit 'Search', class: 'btn btn-primary btn-lg' %> -->
-      <!-- <input type="submit" class="btn btn-primary btn-lg" value="Search"> -->
     <% end %>
-    <!-- </form> -->
   </div>
 </div>
 <div class="wrapper-grey padded">
   <div class="container">
-  <h2 class="text-center">Your next trip</h2>
+  <h3>Houses</h3>
   <div class="row">
     <% @houses.each do |house| %>
     <div class="col-xs-12 col-sm-4">
