@@ -1,17 +1,31 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= path_to_image "background.jpg" %>');">
   <div class="banner-content">
-    <h1>WELCOME HOME</h1>
-    <p>Rent unique places to stay from local hosts in 190+ countries.</p>
-    <form action="#" class="form-inline">
-      <input type="text" class="form-control input-lg" placeholder="checkin">
-      <input type="text" class="form-control input-lg" placeholder="checkout">
+    <h1>CATBNB</h1>
+    <p>Renting a place as a cat has never been easier.</p>
+    <%= simple_form_for @house, html: { class: "form-inline" } do |f| %>
+    <!-- <form action="#" class="form-inline"> -->
+      <div class='input-group date' id='datetimepicker1'>
+        <input type="text" class="form-control input-lg" placeholder="checkin">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+      <div class='input-group date' id='datetimepicker2'>
+        <input type="text" class="form-control input-lg" placeholder="checkout">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
       <select name="" id="" class="form-control input-lg">
         <option value="1">1 person</option>
         <option value="2">2 persons</option>
         <option value="3">3 persons</option>
       </select>
-      <input type="submit" class="btn btn-primary btn-lg" value="Search">
-    </form>
+      <%= link_to 'Search', houses_path, class: "btn btn-primary btn-lg" %>
+<!--       <%= f.submit 'Search', class: 'btn btn-primary btn-lg' %> -->
+      <!-- <input type="submit" class="btn btn-primary btn-lg" value="Search"> -->
+    <% end %>
+    <!-- </form> -->
   </div>
 </div>
 <div class="wrapper-grey padded">
