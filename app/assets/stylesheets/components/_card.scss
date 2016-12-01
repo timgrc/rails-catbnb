@@ -38,6 +38,22 @@
   background: black;
   opacity: 0;
 }
+
+.card-link-two {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+
 .card-link:hover{
   opacity: 0.1;
+}
+
+.card-link-two:hover{
+  content: "Edit";
+  opacity: 0.3;
 }

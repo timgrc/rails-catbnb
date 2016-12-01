@@ -1,4 +1,10 @@
 class House < ApplicationRecord
+  KIND = {
+    'Full House': 'full_house',
+    'Dormitory': 'dormitory',
+    'Cat Tree': 'cat_tree'
+  }
+
   belongs_to :cat
   has_many :reservations
   has_many :cats, through: :reservations

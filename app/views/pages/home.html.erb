@@ -23,21 +23,21 @@
 </div>
 <div class="wrapper-grey padded">
   <div class="container">
-  <h3>Houses</h3>
-  <div class="row">
-    <% @houses.each do |house| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: url('<%= path_to_image "background.jpg" %>');">
-        <div class="card-category"><%= house.name %></div>
-        <div class="card-description">
-          <h2><%= house.name %></h2>
-          <p><%= house.address %></p>
+    <h3>Houses</h3>
+    <div class="row">
+      <% @houses.each do |house| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: url('<%= path_to_image "background.jpg" %>');">
+          <div class="card-category"><%= house.name %></div>
+          <div class="card-description">
+            <h2><%= house.name %></h2>
+            <p><%= house.address %></p>
+          </div>
+          <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
+          <%= link_to "#", houses_path, class: "card-link" %>
         </div>
-        <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
-        <%= link_to "#", houses_path, class: "card-link" %>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
-</div>
 </div>

@@ -1,7 +1,7 @@
 <%= simple_form_for([:owner, @house]) do |f| %>
   <%= f.input :name, placeholder: Faker::Address.city %>
   <%= f.input :address, placeholder: Faker::Address.street_address %>
-  <%= f.input :kind %>
+  <%= f.input :kind, collection: House::KIND, selected: "full_house" %>
   <%= f.input :capacity %>
   <%= f.input :price %>
   <%= f.input :catnip %>
