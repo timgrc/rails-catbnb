@@ -2,22 +2,19 @@
   <div class="banner-content">
     <h1>CATBNB</h1>
     <p>Renting a place as a cat has never been easier.</p>
-    <%= simple_form_for @house, html: { class: "form-inline" } do |f| %>
+    <%= form_tag houses_path, method: :get, class: 'form-inline' do |f| %>
       <div class='input-group col-xs-3'>
-        <input placeholder="Where?" class="form-control input-lg" type="text">
+        <%= text_field_tag 'location', nil, placeholder: 'Where?', class: 'form-control input-lg' %>
       </div>
       <div class='input-group col-xs-3'>
-        <input placeholder="Checkin" class="form-control input-lg" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
+        <%= text_field_tag 'arrival_date', Date.today, placeholder: 'Checkin', onfocus: "(this.type='date')", onblur: "(this.type='text')", class: 'form-control input-lg' %>
       </div>
       <div class='input-group col-xs-3'>
-          <input placeholder="Checkout" class="form-control input-lg" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date">
+        <%= text_field_tag 'departure_date', Date.today + 1, placeholder: 'Checkout', onfocus: "(this.type='date')", onblur: "(this.type='text')", class: 'form-control input-lg' %>
       </div>
-      <select name="" id="" class="form-control input-lg">
-        <option value="1">1 cat</option>
-        <option value="2">2 cats</option>
-        <option value="3">3 cats</option>
-      </select>
-      <%= link_to 'Search', houses_path, class: "btn btn-primary btn-lg" %>
+      <%= select_tag 'nb_cats', options_for_select((1..3).to_a, "MasterCard"), class: 'form-control input-lg' %> cats
+
+      <%= submit_tag 'Search', class: "btn btn-primary btn-lg" %>
     <% end %>
   </div>
 </div>
