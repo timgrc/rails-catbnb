@@ -3,9 +3,14 @@ class Cat < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :reservations
-  has_many :houses, through: :reservations
+
+  # Get owner's reservations through its houses
   has_many :houses
+  has_many :rentals, through: :houses, source: :reservations
+
+  # Get traveler's reservations
+  has_many :reservations
+
 
   validates :name, presence: true
 end
