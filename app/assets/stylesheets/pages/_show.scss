@@ -15,8 +15,40 @@
   align-items: center;
 }
 
-ul{
+ul {
   list-style: none;
+}
+
+li {
+  margin: 10px 0px 10px 0px;
+}
+
+.presentation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resa {
+  border: 1px solid grey;
+  margin: 10px;
+  padding: 10px;
+}
+
+hr {
+  border-width: 2px;
+}
+
+h3 {
+  color: #484848;
+}
+
+i {
+  margin-right: 10px;
+  color: #D2D2D2;
+}
+
+strong {
+  color: #D2D2D2;
 }
 
 
