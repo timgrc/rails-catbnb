@@ -3,12 +3,12 @@ class Owner::ReservationsController < ApplicationController
 
   def accept
     @rental.update(status: 'accepted')
-    redirect_to owner_reservations_path
+    redirect_to reservations_path
   end
 
   def decline
     @rental.update(status: 'declined')
-    redirect_to owner_reservations_path
+    redirect_to reservations_path
   end
 
   private
