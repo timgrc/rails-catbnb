@@ -11,6 +11,7 @@ class Cat < ApplicationRecord
   # Get traveler's reservations
   has_many :reservations
 
+  mount_uploader :profile_picture, PhotoUploader
 
   validates :name, presence: true
 end

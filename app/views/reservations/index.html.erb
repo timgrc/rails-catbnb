@@ -1,0 +1,20 @@
+<div class="wrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= path_to_image "background.jpg" %>');">
+  <div class="container banner-content text-center">
+    <div class="banner-title">
+      <h1>My reservations</h1>
+    </div>
+    <div class="tabs">
+      <a class="tab active" data-target="#my_reservations"">My reservations</a>
+      <a class="tab" data-target="#my_rental">My rentals</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="my_reservations" class="tab-content"><%= render 'reservations' %></div>
+  <div id="my_rentals" class="tab-content hidden"><%= render 'rentals' %></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="javascript/tabs.js"></script>
+

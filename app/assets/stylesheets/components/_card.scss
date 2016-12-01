@@ -29,31 +29,34 @@
 .card-description p {
   font-size: 15px;
 }
-.card-link {
+.card-link, .card-link-bis {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
-  z-index:2;
+  z-index: 2;
   background: black;
   opacity: 0;
+  border-radius: 5px;
 }
-
-.card-link-two {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  z-index:2;
-  background: black;
-  opacity: 0;
-}
-
 .card-link:hover{
   opacity: 0.1;
 }
-
-.card-link-two:hover{
-  content: "Edit";
-  opacity: 0.3;
+.card-link-bis:hover{
+  opacity: 0.7;
+}
+.card i {
+  visibility: hidden;
+}
+.card:hover i {
+  visibility: visible;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  z-index: 999;
+  color: white;
 }

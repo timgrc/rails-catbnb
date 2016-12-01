@@ -199,13 +199,14 @@ puts "Creating seeds..."
 #   },
 
 
-felix = Cat.create({
+felix = Cat.new({
     name: 'Felix',
-    profile_picture: 'https://res-5.cloudinary.com/dql1gghy3/image/upload/t_media_lib_thumb/v1480501453/felix_cat_io94c4.png',
     email: "felix@cats.com",
     password: "catcat",
   }
 )
+felix.remote_profile_picture_url = 'https://res-5.cloudinary.com/dql1gghy3/image/upload/t_media_lib_thumb/v1480501453/felix_cat_io94c4.png'
+felix.save!
 
 10.times do
   felix_house = House.new({
@@ -219,7 +220,7 @@ felix = Cat.create({
 
   felix_house.cat = felix
   url = "https://res.cloudinary.com/dql1gghy3/image/upload/v1480501453/felix_bed_awglpw.png"
-  # felix_house.remote_photo_url = url
+  felix_house.remote_photo_url = url
   felix_house.save!
 
 end
