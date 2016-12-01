@@ -2,7 +2,7 @@ class Owner::HousesController < ApplicationController
   before_action :find_house, only: [:show, :edit, :update, :destroy]
 
   def index
-    @houses = House.all
+    @houses = current_cat.houses
   end
 
   def new
@@ -13,7 +13,7 @@ class Owner::HousesController < ApplicationController
     @house = House.new(house_params)
     @house.cat = current_cat
     if @house.save
-      redirect_to house_path(@house)
+      redirect_to owner_houses_path(@house)
     else
       render 'new'
     end
