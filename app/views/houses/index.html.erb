@@ -1,6 +1,10 @@
 <div class="container">
   <h3>Houses list</h3>
+  <% unless @location.nil? %>
+    <h4>Recherche par ville : <%= @location %></h4>
+  <% end %>
   <div class="row">
+
     <% @houses.each do |house| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: url('<%= path_to_image "background.jpg" %>');">
