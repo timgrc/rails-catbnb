@@ -1,43 +1,43 @@
 <div class="banner-show" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @house.photo %>');"></div>
 
 <div class="container">
-  <div class="container-presentation">
-      <div class="presentation-appart">
-        <div class="house">
-          <h1><%= @house.name.capitalize %></h1>
-          <%= @house.address %>
+  <div class="row">
+    <div class="presentation">
+        <div class="container-presentation col-xs-9">
+          <div class="presentation-appart">
+            <div class="house">
+              <h1><%= @house.name.capitalize %></h1>
+              <%= @house.address %>
+            </div>
+            <div class="owner">
+              <%= cl_image_tag @house.cat.profile_picture %>
+              <%= @house.cat.name.capitalize  %>
+            </div>
+          </div>
+          <hr>
+          <div class="about">
+            <h2>About this house</h2>
+            <h3>Description</h3>
+            <p><%= @house.description %></p>
+            <hr>
+            <h3>House</h3>
+            <ul>
+              <li><i class="fa fa-home" aria-hidden="true"></i><strong>Kind:</strong> <%= @house.kind %></li>
+              <li><i class="fa fa-bed" aria-hidden="true"></i><strong>Capacity:</strong> <%= @house.capacity %></li>
+              <li><i class="fa fa-pagelines" aria-hidden="true"></i><strong>Catnip:</strong> <%= "Yes" if @house.catnip %></li>
+            </ul>
+            <h3>Price</h3>
+            <p><%= @house.price %>€ / Nuit </p>
+          </div>
         </div>
-        <div class="owner">
-        <%= cl_image_tag @house.cat.profile_picture %>
-        <%= @house.cat.name.capitalize  %>
+      <div class="form-resa col-xs-3">
+        <div class="resa text-center">
+          <%= render 'form' %>
         </div>
+      </div>
     </div>
   </div>
-
-  <hr>
-  <div>
-    <%= render 'form' %>
-  </div>
-  <hr>
-
-  <h2>About this house</h2>
-  <h3>Description</h3>
-  <p><%= @house.description %></p>
-
-
-  <hr>
-
-
-  <h3>House</h3>
-  <ul>
-    <li><i class="fa fa-home" aria-hidden="true"></i><strong>Kind:</strong> <%= @house.kind %></li>
-    <li><i class="fa fa-bed" aria-hidden="true"></i><strong>Capacity:</strong> <%= @house.capacity %></li>
-    <li><i class="fa fa-pagelines" aria-hidden="true"></i><strong>Catnip:</strong> <%= "Yes" if @house.catnip %></li>
-  </ul>
-  <h3>Price</h3>
-  <p><%= @house.price %> / Nuit </p>
-
-  <%= link_to 'Back', houses_path %>
+  <%= link_to 'Back to home', houses_path, class: "btn btn-primary" %>
 </div>
 
 
