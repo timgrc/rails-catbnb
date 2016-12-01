@@ -12,7 +12,7 @@
           </div>
           <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
           <%= link_to edit_owner_house_path(house), class: "card-link" do %>
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <i><%= reservation.status %></i>
           <% end %>
         </div>
       </div>
