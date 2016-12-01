@@ -7,13 +7,15 @@ Rails.application.routes.draw do
     post '/reservations/booking', to: 'reservations#booking'
   end
 
+  resources :reservations, only: [:index]
+
   resources :cats, only: [:show]
 
   resources :profile, only: [:edit, :update]
 
   namespace :owner do
     resources :houses,       only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :reservations, only: [:index] do
+    resources :reservations, only: [] do
       member do
         patch :accept
         patch :decline
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   namespace :traveler do
-    resources :reservations, only: [:index] do
+    resources :reservations, only: [] do
       member do
         get :confirmation
       end

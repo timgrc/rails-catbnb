@@ -10,7 +10,7 @@
               <%= @house.address %>
             </div>
             <div class="owner">
-              <%= cl_image_tag @house.cat.profile_picture %>
+              <%= cl_image_tag @house.cat.profile_picture.url(:profile) %>
               <%= @house.cat.name.capitalize  %>
             </div>
           </div>
