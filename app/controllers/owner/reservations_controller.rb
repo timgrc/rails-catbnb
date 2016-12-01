@@ -2,7 +2,7 @@ class Owner::ReservationsController < ApplicationController
   before_action :find_reservation, only: [:accept, :decline]
 
   def index
-    @current_cat_rentals = current_cat.rentals.order(created_at: :desc)
+    @current_cat_rentals = current_cat.rentals.order(created_at: :asc)
   end
 
   def accept
@@ -14,7 +14,6 @@ class Owner::ReservationsController < ApplicationController
     @rental.update(status: 'declined')
     redirect_to owner_reservations_path
   end
-
 
   private
 
