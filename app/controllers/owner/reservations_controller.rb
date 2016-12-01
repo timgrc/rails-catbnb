@@ -1,7 +1,6 @@
 class Owner::ReservationsController < ApplicationController
   before_action :find_reservation, only: [:accept, :decline]
 
-
   def accept
     @rental.update(status: 'accepted')
     redirect_to owner_reservations_path
