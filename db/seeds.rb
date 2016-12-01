@@ -198,6 +198,9 @@ puts "Creating seeds..."
 #     house:
 #   },
 
+Reservation.destroy_all
+House.destroy_all
+Cat.destroy_all
 
 felix = Cat.new({
     name: 'Felix',

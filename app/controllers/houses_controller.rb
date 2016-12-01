@@ -1,8 +1,9 @@
 class HousesController < ApplicationController
   before_action :find_house, only: [:show]
+  skip_before_action :authenticate_cat!, only: [:index, :show]
 
   def index
-    if params[:location].nil?
+    if params[:location].nil? || params[:location].empty?
       @location = nil
       @houses = House.all
     else

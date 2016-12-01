@@ -1,1 +1,22 @@
-
+<div class="wrapper-grey new-padding">
+  <div class="container ">
+    <h3>My Houses <%= link_to 'Create new house', new_owner_house_path, class: 'btn btn-primary' %></h3>
+    <div class="row new-padding-two">
+      <% @current_cat_reservations.each do |reservation| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: url('<%= path_to_image "background.jpg" %>');">
+          <div class="card-category"><%= reservation.house.name %></div>
+          <div class="card-description">
+            <h2><%= reservation.house.name %></h2>
+            <p><%= reservation.house.address %></p>
+          </div>
+          <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
+          <%= link_to edit_owner_house_path(reservation.house), class: "card-link" do %>
+            <i><%= reservation.status %></i>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
