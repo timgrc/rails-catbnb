@@ -21,6 +21,13 @@ gem 'autoprefixer-rails'
 gem 'cloudinary', '1.1.0'
 gem 'carrierwave'
 
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 source "https://rails-assets.org" do
   gem 'rails-assets-bootstrap-datepicker'
 end

@@ -4,19 +4,21 @@
     <h4>Recherche par ville : <%= @location %></h4>
   <% end %>
   <div class="row">
-
     <% @houses.each do |house| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
       url('<%= cl_image_path house.photo.url(:photo_card) %>');">
-        <div class="card-category"><%= house.name %></div>
-        <div class="card-description">
-          <h2><%= house.name %></h2>
-          <p><%= house.address %></p>
+          <div class="card-category"><%= house.name %></div>
+          <div class="card-description">
+            <h2><%= house.name %></h2>
+            <p><%= house.address %></p>
+          </div>
+          <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
+          <%= link_to "#", house_path(house), class: "card-link" %>
         </div>
-        <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
-        <%= link_to "#", house_path(house), class: "card-link" %>
-      </div>
-    </div>
     <% end %>
   </div>
+  <div class="row">
+<!--     <%= render 'map' %> -->
+  </div>
+</div>
