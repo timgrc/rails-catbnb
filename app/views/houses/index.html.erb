@@ -1,9 +1,9 @@
 <div class="container">
   <h3>Houses list</h3>
+  <% unless @location.nil? %>
+    <h4>Recherche par ville : <%= @location %></h4>
+  <% end %>
   <div class="row">
-    <% unless @location.nil? %>
-      Recherche par ville : <%= @location %>
-    <% end %>
 
     <% @houses.each do |house| %>
     <div class="col-xs-12 col-sm-4">
