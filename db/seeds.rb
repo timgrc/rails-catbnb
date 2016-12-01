@@ -210,7 +210,7 @@ felix = Cat.create({
 10.times do
   felix_house = House.new({
     name: 'Felix House',
-    address: 'Rue de la patée pour chat gris',
+    address: '2 Place Général Mellinet, 44100 Nantes',
     kind: ['full_house', 'dormitory', 'cat_tree'].sample,
     capacity: (1..10).to_a.sample,
     price: (1..50).to_a.sample * 5
@@ -219,7 +219,7 @@ felix = Cat.create({
 
   felix_house.cat = felix
   url = "https://res.cloudinary.com/dql1gghy3/image/upload/v1480501453/felix_bed_awglpw.png"
-  felix_house.remote_photo_url = url
+  # felix_house.remote_photo_url = url
   felix_house.save!
 
 end
