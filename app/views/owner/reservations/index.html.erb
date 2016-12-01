@@ -1,0 +1,54 @@
+<!-- owner_reservations GET    /owner/reservations(.:format)                     owner/reservations#index -->
+
+
+<div class="container">
+
+  <h1>
+    Here the list of all reservations for <%= @current_cat.name %>
+  </h1>
+
+  <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Reservation ID</th>
+          <th>Arrival</th>
+          <th>Departure</th>
+          <th>Nb nights</th>
+          <th>Nb cats</th>
+          <th>Price per night</th>
+          <th>Total price</th>
+          <th>Status</th>
+          <th>Accept/Decline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @current_cat_rentals.each  do |rental| %>
+          <tr>
+            <td><%= rental.id %></td>
+            <td><%= rental.arrival_date %></td>
+            <td><%= rental.departure_date %></td>
+            <td><%= ((rental.departure_date) - (rental.arrival_date)).to_i %></td>
+            <td><%= rental.nb_cats %></td>
+            <td><%= rental.price %>€</td>
+            <td><%= rental.nb_cats * rental.price %>€</td>
+            <td><%= rental.status %></td>
+            <td><%= button_to "Accept", accept_owner_reservation_path(rental),
+                :id => "open-contacts-dialog-btn",
+                :class => "inbox-sf-add-btn tip",
+                :method => :patch %>
+              <%= button_to "Decline", decline_owner_reservation_path(rental),
+                :id => "open-contacts-dialog-btn",
+                :class => "inbox-sf-add-btn tip",
+                :method => :patch %>
+            </td>
+          </tr>
+        <% end %> 
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
