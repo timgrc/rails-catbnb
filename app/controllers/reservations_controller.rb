@@ -1,6 +1,11 @@
 class ReservationsController < ApplicationController
   before_action :find_house, only: [ :new, :booking, :create ]
 
+  def index
+    @current_cat_rentals = current_cat.rentals.order(created_at: :asc)
+    @current_cat_reservations = current_cat.reservations.order(created_at: :asc)
+  end
+
   def new
     raise
     arrival_date   = Date.new(2016,12,22)
