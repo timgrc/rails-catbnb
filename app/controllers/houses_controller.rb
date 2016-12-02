@@ -22,6 +22,13 @@ class HousesController < ApplicationController
 
   def show
     @reservation = Reservation.new
+    @houses = []
+    @houses << @house
+
+    @hash = Gmaps4rails.build_markers(@houses) do |house, marker|
+      marker.lat house.latitude
+      marker.lng house.longitude
+    end
   end
 
   private

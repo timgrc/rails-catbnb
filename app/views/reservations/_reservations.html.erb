@@ -8,7 +8,7 @@
           <p><%= reservation.house.address %></p>
         </div>
         <%= cl_image_tag reservation.cat.profile_picture.url(:profile), class:"card-user avatar avatar-large" %>
-        <%= link_to edit_owner_house_path(reservation.house), class: "card-link" do %>
+        <%= link_to edit_owner_house_path(reservation.house), class: "card-link-bis" do %>
           <i><%= reservation.status %></i>
         <% end %>
       </div>
