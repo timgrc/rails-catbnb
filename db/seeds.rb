@@ -36,7 +36,7 @@ addresses_url = [
   },
 
  {
-    name: 'One bed on my coach',
+    name: 'One bed on my couch',
     address: '11 Chaussée de la Madeleine, 44000 Nantes',
     url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501453/tom_bed_gx4bsw.png'
   },

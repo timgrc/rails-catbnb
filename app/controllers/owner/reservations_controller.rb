@@ -2,7 +2,7 @@ class Owner::ReservationsController < ApplicationController
   before_action :find_reservation, only: [:accept, :decline]
 
   def accept
-    @rental.update(status: 'accept')
+    @rental.update(status: 'accepted')
   end
 
   def decline
