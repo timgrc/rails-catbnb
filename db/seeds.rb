@@ -27,36 +27,42 @@ addresses_url = [
   {
     name: 'Huge dormitory treecat',
     address: '12 avenue Gilard, Nantes',
-    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501690/billy_bed_hduzge.jpg'
+    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501690/billy_bed_hduzge.jpg',
+    description: 'Nice tree cat with a huge dormitory ! Some catnips for free !'
   },
   {
     name: 'Single room in cosy castle',
     address: '55 rue du faubourg saint honoré, Paris',
-    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501452/azrael_house_dnqbl5.jpg'
+    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501452/azrael_house_dnqbl5.jpg',
+    description: 'You will elect this castle for the five next year if you like it !'
   },
 
  {
     name: 'One bed on my couch',
     address: '11 Chaussée de la Madeleine, 44000 Nantes',
-    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501453/tom_bed_gx4bsw.png'
+    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501453/tom_bed_gx4bsw.png',
+    description: 'Small bed and nice host !'
   },
 
   {
     name: 'Comfy pizza bed',
     address: ' 11 Allée de la Maison Rouge, 44000 Nantes',
-    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501451/spacecat_bedjpg_e7x4uu.jpg'
+    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501451/spacecat_bedjpg_e7x4uu.jpg',
+    description: 'I can has Pizzzzzzzzzzzaaaaaaaaaa bed !'
   },
 
   {
     name: 'Large space dormitory',
     address: 'Halle de la Madeleine, 11 Impasse Juton, 44000 Nantes',
-    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501451/spacecat_house_pwtsx8.jpg'
+    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501451/spacecat_house_pwtsx8.jpg',
+    description: 'Space dorm ! A bit warm !'
   },
 
   {
     name: 'Nice house in the city center',
     address: '2 place du général Mellinet, Nantes',
-    url: 'http://res.cloudinary.com/dql1gghy3/image/upload/v1480501450/azrael_bed_rfnosw.jpg'
+    url: 'http://res.cloudinary.com/dql1gghy3/image/upload/v1480501450/azrael_bed_rfnosw.jpg',
+    description: 'Nice flat for big cats !'
   }
 ]
 
@@ -64,6 +70,7 @@ addresses_url.each do |attribute|
   house = House.new({
     name: attribute[:name],
     address: attribute[:address],
+    description: attribute[:description],
     kind: ['full_house', 'dormitory', 'cat_tree'].sample,
     capacity: (1..10).to_a.sample,
     price: (1..50).to_a.sample * 5
