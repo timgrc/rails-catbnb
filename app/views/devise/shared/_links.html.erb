@@ -6,7 +6,7 @@
   <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-default" %><br />
 <% end -%>
 
-<%= render 'forgot_password' %>
+<%= render 'devise/shared/forgot_password' %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
