@@ -2,6 +2,7 @@
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
+    <span class="navbar-wagon-font">CATBNB</span>
   <% end %>
 
   <!-- Right Navigation -->
@@ -29,10 +30,10 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= cl_image_tag current_cat.profile_picture.url(:profile), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to '' do %>
+              <%= link_to edit_cat_registration_path do %>
                 <i class="fa fa-user"></i>  <%= t(".profile", default: "My profile") %>
               <% end %>
             </li>
@@ -43,7 +44,7 @@
             </li>
             <li>
               <%= link_to owner_houses_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "My rentals") %>
+                <i class="fa fa-home"></i>  <%= t(".profile", default: "My houses") %>
               <% end %>
             </li>
             <li>
@@ -62,8 +63,6 @@
 
   <% end %>
 
-    <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
