@@ -1,4 +1,4 @@
-<%- if controller_name != 'sessions' %>
+<%- if controller_name != 'pages' %>
   <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end -%>
 
@@ -6,7 +6,9 @@
   <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-default" %><br />
 <% end -%>
 
-<%= render 'devise/shared/forgot_password' %>
+<%- if controller_name != 'pages' %>
+  <%= render 'devise/shared/forgot_password' %>
+<% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
