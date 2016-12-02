@@ -24,8 +24,28 @@
   <% end %>
 
   <% unless @location.nil? %>
+    <h4>Du <%= @arrival_date %> au <%= @departure_date %> </h4>
+    <h4>Pour <%= @nb_cats <= 1 ? "#{@nb_cats} chat" : "#{@nb_cats} chats" %></h4>
     <h4>Recherche par ville : <%= @location %></h4>
   <% end %>
+  <div class="row">
+    <div class="col-xs-12 form-index">
+      <%= form_tag houses_path, method: :get, class: 'form-inline' do |f| %>
+        <div class='input-group col-xs-3'>
+          <%= text_field_tag 'location', @location  , placeholder: 'Where?', class: 'form-control input-lg' %>
+        </div>
+        <div class='input-group col-xs-3'>
+          <%= text_field_tag 'arrival_date', Date.today, placeholder: 'Checkin', onfocus: "(this.type='date')", onblur: "(this.type='text')", class: 'form-control input-lg' %>
+        </div>
+        <div class='input-group col-xs-3'>
+          <%= text_field_tag 'departure_date', Date.today + 1, placeholder: 'Checkout', onfocus: "(this.type='date')", onblur: "(this.type='text')", class: 'form-control input-lg' %>
+        </div>
+        <%= select_tag 'nb_cats', options_for_select((1..3).to_a, "MasterCard"), class: 'form-control input-lg' %>
+        <%= image_tag "cat.png", class: 'cat-logo' %>
+        <%= submit_tag 'Search', class: "btn btn-primary btn-lg" %>
+      <% end %>
+    </div>
+  </div>
   <div class="row">
     <% @houses.each do |house| %>
       <div class="col-xs-12 col-sm-4">
