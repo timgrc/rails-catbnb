@@ -56,7 +56,7 @@ addresses_url = [
   {
     name: 'Nice house in the city center',
     address: '2 place du général Mellinet, Nantes',
-    url: 'https://res.cloudinary.com/dql1gghy3/image/upload/v1480501451/spacecat_house_pwtsx8.jpg'
+    url: 'http://res.cloudinary.com/dql1gghy3/image/upload/v1480501450/azrael_bed_rfnosw.jpg'
   }
 ]
 
