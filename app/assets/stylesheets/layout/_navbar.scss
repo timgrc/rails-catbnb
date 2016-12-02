@@ -1,4 +1,4 @@
-/* Main class */
+ /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
@@ -48,7 +48,10 @@
   font-family: "Pacifico", "cursive";
   font-size: 25px;
   margin-left: 10px;
-  margin-top: 5px;
+}
+
+.navbar-wagon-brand:hover{
+  text-decoration: none;
 }
 .navbar-wagon-link:hover {
   color: #da552f;

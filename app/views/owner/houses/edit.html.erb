@@ -2,6 +2,7 @@
   <div class="container ">
     <h1>Edit a new house</h1>
     <%= render 'form' %>
+    <br />
     <%= link_to 'Delete this house', owner_house_path(@house), method: :delete,
           data: { confirm: "Are you sure to want to delete this house ?" }, class: 'btn btn-danger' %>
   </div>
