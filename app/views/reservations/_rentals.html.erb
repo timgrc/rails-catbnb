@@ -15,7 +15,6 @@
           <th>Price per night</th>
           <th>Total price</th>
           <th>Status</th>
-          <th>Accept/Decline</th>
         </tr>
       </thead>
       <tbody>
@@ -28,16 +27,21 @@
             <td><%= rental.nb_cats %></td>
             <td><%= rental.price %>€</td>
             <td><%= rental.nb_cats * rental.price %>€</td>
-            <td><%= rental.status %></td>
-            <td><%= button_to "Accept", accept_owner_reservation_path(rental),
-                :id => "open-contacts-dialog-btn",
-                :class => "inbox-sf-add-btn tip",
-                :method => :patch %>
-              <%= button_to "Decline", decline_owner_reservation_path(rental),
-                :id => "open-contacts-dialog-btn",
-                :class => "inbox-sf-add-btn tip",
-                :method => :patch %>
-            </td>
+            <% if rental.status == 'pending' %>
+              <td data-rental-id='<%= rental.id %>'><%= link_to "Accept", accept_owner_reservation_path(rental),
+                  :id => "open-contacts-dialog-btn",
+                  :class => "inbox-sf-add-btn tip " ,
+                  :method => :patch,
+                  remote: true %> /
+                <%= link_to "Decline", decline_owner_reservation_path(rental),
+                  :id => "open-contacts-dialog-btn",
+                  :class => "inbox-sf-add-btn tip",
+                  :method => :patch,
+                  remote: true %>
+              </td>
+            <% else %>
+              <td><%= rental.status %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

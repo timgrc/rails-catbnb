@@ -18,7 +18,8 @@ Bundler.require(*Rails.groups)
 
 module RailsCatbnb
   class Application < Rails::Application
-      config.generators do |generate|
+    config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.generators do |generate|
     generate.assets false
     generate.helper false
   end
