@@ -1,20 +1,18 @@
-<div class="wrapper-grey new-padding">
-  <div class="container ">
-    <div class="row new-padding-two">
-      <% @current_cat_reservations.each do |reservation| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: url('<%= reservation.house.photo %>');">
-          <div class="card-category"><%= reservation.house.name %></div>
-          <div class="card-description">
-            <p><%= reservation.house.address %></p>
-          </div>
-          <%= cl_image_tag reservation.cat.profile_picture.url(:profile), class:"card-user avatar avatar-large" %>
-          <%= link_to edit_owner_house_path(reservation.house), class: "card-link" do %>
-            <i><%= reservation.status %></i>
-          <% end %>
+<div class="container">
+  <div class="row">
+    <% @current_cat_reservations.each do |reservation| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: url('<%= reservation.house.photo %>');">
+        <div class="card-category"><%= reservation.house.name %></div>
+        <div class="card-description">
+          <p><%= reservation.house.address %></p>
         </div>
+        <%= cl_image_tag reservation.cat.profile_picture.url(:profile), class:"card-user avatar avatar-large" %>
+        <%= link_to edit_owner_house_path(reservation.house), class: "card-link" do %>
+          <i><%= reservation.status %></i>
+        <% end %>
       </div>
-      <% end %>
     </div>
+    <% end %>
   </div>
 </div>

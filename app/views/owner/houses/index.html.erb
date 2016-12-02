@@ -1,22 +1,20 @@
-<div class="wrapper-grey new-padding">
-  <div class="container ">
-    <h3>My Houses <%= link_to 'Create new house', new_owner_house_path, class: 'btn btn-primary' %></h3>
-    <div class="row new-padding-two">
-      <% @houses.each do |house| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: url('<%= path_to_image "background.jpg" %>');">
-          <div class="card-category"><%= house.name %></div>
-          <div class="card-description">
-            <h2><%= house.name %></h2>
-            <p><%= house.address %></p>
-          </div>
-          <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
-          <%= link_to edit_owner_house_path(house), class: "card-link-bis" do %>
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-          <% end %>
+<div class="container modal_margin">
+  <h3>My Houses <%= link_to 'Create new house', new_owner_house_path, class: 'btn btn-primary' %></h3>
+  <div class="row modal_margin-two">
+    <% @houses.each do |house| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: url('<%= path_to_image "background.jpg" %>');">
+        <div class="card-category"><%= house.name %></div>
+        <div class="card-description">
+          <h2><%= house.name %></h2>
+          <p><%= house.address %></p>
         </div>
+        <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
+        <%= link_to edit_owner_house_path(house), class: "card-link-bis" do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <% end %>
       </div>
-      <% end %>
     </div>
+    <% end %>
   </div>
 </div>
