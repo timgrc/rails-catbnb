@@ -2,13 +2,11 @@ class Owner::ReservationsController < ApplicationController
   before_action :find_reservation, only: [:accept, :decline]
 
   def accept
-    @rental.update(status: 'accepted')
-    redirect_to reservations_path
+    @rental.update(status: 'accept')
   end
 
   def decline
     @rental.update(status: 'declined')
-    redirect_to reservations_path
   end
 
   private
