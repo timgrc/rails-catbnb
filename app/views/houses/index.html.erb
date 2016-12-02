@@ -25,8 +25,8 @@
 
   <% unless @location.nil? %>
 
-    <h4>Du <%= @arrival_date %> au <%= @departure_date %> </h4>
-    <h4>Pour <%= @nb_cats <= 1 ? "#{@nb_cats} chat" : "#{@nb_cats} chats" %></h4>
+    <h4>From <%= @arrival_date %> to <%= @departure_date %> </h4>
+    <h4>For <%= @nb_cats <= 1 ? "#{@nb_cats} chat" : "#{@nb_cats} chats" %></h4>
     <h4>Search for : <%= @location %></h4>
   <% end %>
   <div class="row">
