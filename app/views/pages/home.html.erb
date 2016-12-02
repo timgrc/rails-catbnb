@@ -31,8 +31,8 @@
             <h2><%= house.name %></h2>
             <p><%= house.address %></p>
           </div>
-          <%= image_tag "logo.png", class:"card-user avatar avatar-large" %>
-          <%= link_to "#", houses_path, class: "card-link" %>
+          <%= cl_image_tag house.cat.profile_picture.url(:profile), class:"card-user avatar avatar-large" %>
+          <%= link_to "", house_path(house), class: "card-link" %>
         </div>
       </div>
       <% end %>
