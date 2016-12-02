@@ -9,6 +9,7 @@ class HousesController < ApplicationController
     else
       @location = params[:location]
       @houses   = House.near(@location, 100)
+      session[:search_params]['location'] = @location
     end
 
     if params[:arrival_date].nil? || params[:arrival_date].nil? || params[:departure_date].empty? || params[:departure_date].empty?
@@ -17,21 +18,20 @@ class HousesController < ApplicationController
     else
       @arrival_date   = params[:arrival_date]
       @departure_date = params[:departure_date]
+      session[:search_params]['arrival_date']   = @arrival_date
+      session[:search_params]['departure_date'] = @departure_date
     end
 
     if params[:nb_cats].nil? || params[:nb_cats].empty?
       @nb_cats = nil
     else
       @nb_cats = params[:nb_cats].to_i
+      session[:search_params]['nb_cats'] = params[:nb_cats]
     end
-
-    session[:search_params] = params
-    # @houses = House.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@houses) do |house, marker|
       marker.lat house.latitude
       marker.lng house.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
   end
 
